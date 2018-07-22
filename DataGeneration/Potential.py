@@ -5,6 +5,7 @@ class GravPot():
     def __init__(self):
               
         self.G =6.67408e-11;
+        
     def  getStatDev(self, p1, t, m1, listOfParticles):
         r = p1[:3]
         vel=p1[3:];
