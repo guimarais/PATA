@@ -10,6 +10,10 @@ import pandas as pd
 
 
 def is_header(line):
+    """
+    Method that returns true if the first characters in a string are a set of **
+    white spaces at the start of the string are strip away before we start the analysis
+    """
     #first split the line
     return line.lstrip().startswith("**")
     
