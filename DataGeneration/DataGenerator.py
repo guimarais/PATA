@@ -2,18 +2,81 @@ import numpy as np
 from scipy.integrate import  odeint
 from matplotlib import pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-class State:
+class State:    
+    """
+    A class representing a state - [x,y,z,px,py,px] - by its position and
+    momentum components
+    Attributes
+    ----------
+    self.r : np.array, size == 3
+        the r - position - vector associated with this state
+    self.p : np.array, size == 3
+        the p - momentum - vector associated with this state
+    """
     
     def __init__(self, r_=np.zeros(3), p_=np.zeros(3)):
+        """
+        The constructor for the State class        
+        Parameters
+        -----------
+        r_: numpy.array, size == 3 -- default numpy.zeros(3)
+            r vector ([x,y,z])
+        p_: numpy.array, size == 3 -- default numpy.zeros(3)
+            p vector ([px, py, pz])
+        
+        Example
+        -----------
+        pos = numpy.array([1.,1.,1.]) # a particle in x=1., y=1., z=1.
+        momentum = numpy.array([0.,0.,0.]) # the particle is stoped
+        st1 = State(pos,momentum)
+        """
         self.r=r_
         self.p=p_
-    def vetToState(self, vecT):
-        if(vecT.__class__.__name__=='ndarray' and vecT.size==6):
-            self.r = vecT[:3]
-            self.p = vecT[3:]
+        
+    def vetToState(self, stateVector):
+        """
+        Updates the current state object by the information within a state vector
+        Parameters
+        -----------
+        stateVector : numpy.array, size == 6
+            The state vector ([x,y,z,px,py,pz]) used to update the current state
+        
+        Example
+        -----------
+        st1 = State()  # initializes with the position and momentum equal to zero
+        st1.vetToState([1.,1.,1.,0.,0.,0.])
+        pos = st1.
+        momentum = numpy.array([0.,0.,0.]) # the particle is stoped
+        st1 = State(pos,momentum)
+        st1.statToVec()
+        # array([1.,1.,1.,0.,0.,0.])
+        """
+        if(stateVector.__class__.__name__=='ndarray' and stateVector.size==6):
+            self.r = stateVector[:3]
+            self.p = stateVector[3:]
+            
     def statToVec(self):
+        """
+        Converts the current state to a state vector
+        Returns
+        -----------
+        out : numpy.array, size == 6
+            The state vector ([x,y,z,px,py,pz]) created by concatenating the 
+            position and the momentum vectors
+        
+        Example
+        -----------
+        pos = numpy.array([1.,1.,1.]) # a particle in x=1., y=1., z=1.
+        momentum = numpy.array([0.,0.,0.]) # the particle is stoped
+        st1 = State(pos,momentum)
+        st1.statToVec()
+        # array([1.,1.,1.,0.,0.,0.])
+        """
         newVector =np.concatenate((self.r, self.p), axis=0)        
         return newVector
+    
+    def 
+    
         
     
     
