@@ -7,7 +7,7 @@ Created on Tue Apr  9 23:29:55 2019
 """
 import os
 import pandas as pd
-
+import numpy as np
 
 def is_header(line):
     """
