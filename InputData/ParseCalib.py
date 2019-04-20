@@ -57,11 +57,11 @@ def read_calib_file(filename, max_run_index=50000):
               'qi01', 'qi02', 'qi03', 'qi04', 'qi05', 'qi06', 'qi07', 'qi08', 'qi09', 'qi10', 'qi11', 'qi12',
               'pi01', 'pi02', 'pi03', 'pi04', 'pi05', 'pi06', 'pi07', 'pi08', 'pi09', 'pi10', 'pi11', 'pi12',
               'cmxi1','cmyi1','cmzi1','cmxi2','cmyi2','cmzi2','vcmxi1','vcmyi1','vcmzi1','vcmxi2','vcmyi2','vcmzi2',
-              'dcolii','mangxi1','mangyi1','mangzi1','mangxi2','mangyi2','mangzi2',
+              'dcoli','mangxi1','mangyi1','mangzi1','mangxi2','mangyi2','mangzi2',
               'qf01', 'qf02', 'qf03', 'qf04', 'qf05', 'qf06', 'qf07', 'qf08', 'qf09', 'qf10', 'qf11', 'qf12',
               'pf01', 'pf02', 'pf03', 'pf04', 'pf05', 'pf06', 'pf07', 'pf08', 'pf09', 'pf10', 'pf11', 'pf12',
               'cmxf1','cmyf1','cmzf1','cmxf2','cmyf2','cmzf2','vcmxf1','vcmyf1','vcmzf1','vcmxf2','vcmyf2','vcmzf2',
-              'dcolfi','mangxf1','mangyf1','mangzf1','mangxf2','mangyf2','mangzf2']
+              'dcolf','mangxf1','mangyf1','mangzf1','mangxf2','mangyf2','mangzf2']
     
     df = pd.DataFrame(data = np.array(data_line).astype(float), columns = header)
     df = df.set_index('ID')
