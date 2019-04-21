@@ -12,10 +12,23 @@ Python and stuff for other stuff.
 
 ## Goals
 
-1. Calculate trajectories
-1. Build a database
-1. Use Keras for deep learning: teach a NN to learn the physics behind the process.
-1. Use open-source tools: tensforflow, keras, pandas.
-1. Ducks!
+1. Calculate trajectories.
+1. Build a database of diatomic collisions.
+1. Use open source tools for data exploraion and processing: matplotlib, numpy, pandas, etc..
+1. Benchmark open-source tools for prediction/learning: tensforflow, pytorch, pymc3.
+1. Ducks! Ducks are awesome!
 
-## Quack
+## Plotting styles
+
+For uniform data plotting in the project, please use one of the provided matplotlib mplstyle under `./styles`.
+
+* Default matplotlib style. Best for `jupyter-lab` light theme.
+* Latex fonts with **light** theme: `helvet2.mplstyle`.
+* Latex fonts with **dark** theme: `helvet2dark.mplstyle`.
+* Normal fonts with **dark** theme: `mpl2dark.mplstyle`.
+
+## Running code from the project
+
+The yaml file `pata.yml` can be used with conda to create a **pata** environment with all the required software. Just run in a terminal:
+
+`conda env create -f pata.yml`
