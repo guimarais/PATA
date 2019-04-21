@@ -40,6 +40,7 @@ def read_calib_file(filename, max_run_index=50000):
             try:
                 line_initial = fin.readline().split()
                 temp = int(line_initial[0][:-1])
+                Temp = float(line_initial[0][:-1])
                 run_index = int(line_initial[1])
                 ID = temp*max_run_index + run_index
                 
@@ -48,12 +49,12 @@ def read_calib_file(filename, max_run_index=50000):
                 line_final = fin.readline().split()
                 data_final = line_final[1:]
             
-                data_line.append([ID]+data_initial+data_final)
+                data_line.append([ID]+[Temp]+data_initial+data_final)
             
             except: #EOF reached
                 break
     
-    header = ['ID',
+    header = ['ID','Temp',
               'qi01', 'qi02', 'qi03', 'qi04', 'qi05', 'qi06', 'qi07', 'qi08', 'qi09', 'qi10', 'qi11', 'qi12',
               'pi01', 'pi02', 'pi03', 'pi04', 'pi05', 'pi06', 'pi07', 'pi08', 'pi09', 'pi10', 'pi11', 'pi12',
               'cmxi1','cmyi1','cmzi1','cmxi2','cmyi2','cmzi2','vcmxi1','vcmyi1','vcmzi1','vcmxi2','vcmyi2','vcmzi2',
