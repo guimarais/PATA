@@ -28,7 +28,7 @@ def get_input_and_target(line):
 def read_input_files(filename):
     #check if filename exists
     if not os.path.isfile(filename):
-        raise Exception("filename does not exists") # probably not needed...
+        raise Exception("Filename does not exist!") # probably not needed...
     #open file
     fh = open(filename,'r')
     state = -1
@@ -63,4 +63,4 @@ def read_input_files(filename):
 
 
 if __name__ == "__main__":
-    qua = read_input_files("../../data/h2h2_10K.ver")
+    qua = read_input_files("../data/h2h2_10K.ver")
